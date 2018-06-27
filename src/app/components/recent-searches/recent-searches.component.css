@@ -6,9 +6,11 @@
 .recent-search-item{
   font-size: 14px;
     color: #9b9b9b;
-    padding: 15px 0px;
     cursor: pointer;
     
+}
+.recent-search-item-container{
+  padding: 15px 0px;
 }
 .recent-search-item-container > *:not(.ignore){
   text-transform: capitalize;
