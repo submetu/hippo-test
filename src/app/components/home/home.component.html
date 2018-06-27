@@ -1,3 +1,27 @@
-<p>
-  home works!
-</p>
+<div class="home-container header" *ngIf="!afterSearch; else searchSuccessful">
+  <app-logo size="large"></app-logo>
+  <div class="main-heading text">
+    Lorem ipsum dolor sit!
+  </div>
+  <div class="sub-heading text">
+    dolor sit!Lorem ipsum dolor sit!Lorem ipsum dolor sit!Lorem ipsum dolor sit!Lorem ipsum dolor sit!Lorem ipsum dolor sit!Lorem
+    ipsum dolor sit!
+  </div>
+  <app-search-form style="width:100%"></app-search-form>
+</div>
+
+
+<ng-template #searchSuccessful>
+  <div class="after-search-header header">
+    <app-logo size="small"></app-logo>
+    <app-search-form style="width:100%"></app-search-form>
+  </div>
+  <div class="after-search-container">
+    <div class="search-grid">
+
+    </div>
+    <div class="recent-searches">
+      
+    </div>
+  </div>
+  </ng-template>

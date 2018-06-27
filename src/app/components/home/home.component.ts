@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SearchService} from '../../services/search.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  public afterSearch = false;
+  public searchResults;
+  constructor(private searchService:SearchService) { }
 
   ngOnInit() {
+    this.searchService.isSearched().subscribe( isSearched =>{
+      this.afterSearch = isSearched;
+    });
+    this.searchService.getSearchResults().subscribe( searchResults =>{
+      this.searchResults = searchResults;
+      console.log(this.searchResults)
+    })
+    
   }
+  
 
 }

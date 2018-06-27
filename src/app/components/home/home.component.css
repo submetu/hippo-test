@@ -1,0 +1,26 @@
+.header{
+  background: url(/assets/background.jpg);
+}
+.home-container{
+  width: 100%;
+  height: 600px;
+  background-size: 100% 100%;
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.after-search-header{
+  width: 100%;
+  height: 150px;
+  background-size: 100%;
+}
+.main-heading,.sub-heading{
+  width: 100%;
+}
+.sub-heading{
+  max-width: 543px;
+  margin-top: -80px;
+}
+.main-heading{
+  margin-top: -70px;
+}

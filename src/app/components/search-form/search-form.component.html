@@ -1,0 +1,9 @@
+<div class="search-form" [ngClass]="{'search-form-small': afterSearch}">
+    <form #searchForm = "ngForm" (ngSubmit)="searchSubmit(searchForm.value)">
+      <input name="searchFor" placeholder="I'm looking for" type="text" id="search-for" class="search-input" [(ngModel)]="searchFor">
+      <input name="searchIn" placeholder="Place" type="text" id="search-in" class="search-input"  [(ngModel)]="searchIn">
+      <div class="submit-container">
+      <input type="submit" id="search-submit" value="">
+      </div>
+    </form>
+  </div>

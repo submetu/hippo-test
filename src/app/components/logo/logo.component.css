@@ -1,0 +1,16 @@
+.large-logo {
+  width: 454px;
+  height: 228px;
+  background: url(/assets/logo.svg) no-repeat;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.small-logo {
+  width: 252px;
+  height: 124px;
+  background: url(/assets/logo-2.svg) no-repeat;
+  margin: 0 auto;
+  position: relative;
+  right: 320px;
+}

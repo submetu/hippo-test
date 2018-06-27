@@ -1,0 +1,16 @@
+.break{
+  border: 1px solid #e3e3e3;
+  height: 1px;
+}
+.footer{
+  width: 100%;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+}
+.footer-item{
+  color: #9b9b9b;
+  margin-right: 20px;
+  cursor: pointer;
+}
