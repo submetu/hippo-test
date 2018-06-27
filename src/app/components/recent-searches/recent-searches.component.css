@@ -1,0 +1,36 @@
+.recent-search-items ul {
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.recent-search-item{
+  font-size: 14px;
+    color: #9b9b9b;
+    padding: 15px 0px;
+    cursor: pointer;
+    
+}
+.recent-search-item-container > *:not(.ignore){
+  text-transform: capitalize;
+}
+
+.recent-search-item:not(:last-child){
+  border-bottom: solid 1px #e4e4e4;
+}
+
+.recent-search-header {
+  position: relative;
+  text-align:  center;
+  padding: 40px 0px 30px;
+  font-size:  16px;
+  color: #4a4a4a;
+  text-transform: uppercase;
+}
+.recent-search-header:after{
+  content: '';
+  position:absolute;
+  border: 1px solid #c3bfff;
+  width: 100px;
+  bottom: 0px;
+  left: 95px;
+}

@@ -24,3 +24,21 @@
 .main-heading{
   margin-top: -70px;
 }
+.recent-searches{
+  width: 290px;
+  height: 600px;
+  object-fit: contain;
+  background-color: #ffffff;
+  box-shadow: 0 0 34px 0 rgba(255, 95, 95, 0.32);
+}
+.after-search-container {
+    margin:  0 auto;
+    width: 950px;
+    display:  grid;
+    grid-template-columns: 2fr 1fr;
+    margin-top: 30px;
+}
+.search-grid {
+  display:  flex;
+  flex-wrap: wrap;
+}

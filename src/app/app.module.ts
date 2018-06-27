@@ -10,9 +10,11 @@ import { VenueComponent } from './components/venue/venue.component';
 import { HomeComponent } from './components/home/home.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { LogoComponent } from './components/logo/logo.component';
+import { RecentSearchesComponent } from './components/recent-searches/recent-searches.component';
 
 import {SearchService} from './services/search.service';
 import {FoursquareService} from './services/foursquare.service';
+import {StorageService} from './services/storage.service';
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import {FoursquareService} from './services/foursquare.service';
     VenueComponent,
     HomeComponent,
     SearchFormComponent,
-    LogoComponent
+    LogoComponent,
+    RecentSearchesComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import {FoursquareService} from './services/foursquare.service';
   ],
   providers: [
     SearchService,
-    FoursquareService
+    FoursquareService,
+    StorageService
   ],
   bootstrap: [AppComponent]
 })

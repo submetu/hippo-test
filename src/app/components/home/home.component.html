@@ -18,10 +18,10 @@
   </div>
   <div class="after-search-container">
     <div class="search-grid">
-
+      <app-venue *ngFor="let venue of venues" [venue]="venue" ></app-venue>
     </div>
     <div class="recent-searches">
-      
+      <app-recent-searches></app-recent-searches>
     </div>
   </div>
   </ng-template>

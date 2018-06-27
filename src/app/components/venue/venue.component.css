@@ -1,0 +1,73 @@
+.bottom-container{
+  width: 100%;
+}
+.venue {
+  width: 290px;
+  height: 290px;
+  background-color: #92335b;
+  /* opacity: .3; */
+  margin: 0px 10px 10px;
+  display: flex;
+  align-items: flex-end;
+  padding-left: 20px;
+}
+
+.cafe-count-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.cafe-name {
+  font-size: 25px;
+  position: relative;
+  text-align: left;
+  margin-bottom: 20px;
+  overflow: hidden;
+  width: 90%;
+}
+
+.cafe-name:after {
+  width: 48px;
+  border: solid 1px #c3bfff;
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+}
+.cafe-score{
+  position: relative;
+    right: 40px;
+    left: -20px;
+}
+.cafe-rating{
+  background: url(/assets/rectangle-5.svg) no-repeat;
+  background-size: 100% 100%;
+  width: 90px;
+  height: 40px;
+  margin-top: 5px;
+  position: relative;
+  left: 5px;
+}
+.cafe-rating-number{
+  position: relative;
+  top: 20px;
+  font-size: 15px;
+
+}
+span.bar {
+  width: 60px;
+  opacity: 0.43;
+  position:  relative;
+  display:  inline-block;
+  border: 1px solid black;
+  bottom:  3px;
+  left: 5px;
+}
+span.bar:before {
+  content: "";
+  position:  absolute;
+  width: 30px;
+  border:  1px solid #c3bfff;
+  bottom: -1px;
+  left: -1px;
+}

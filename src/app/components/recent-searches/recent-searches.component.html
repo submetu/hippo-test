@@ -1,0 +1,14 @@
+<div class="recent-search-container">
+  <div class="recent-search-header"> Recent Searches </div>
+  <div class="recent-search-items">
+    <ul>
+      <li class="recent-search-item text" *ngFor="let recentSearch of recentSearches">
+        <div class="recent-search-item-container" (click)="searchVenues(recentSearch)">
+          <span>{{recentSearch.searchFor}} </span>
+          <span class="ignore">in</span>
+          <span>{{recentSearch.searchIn}}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

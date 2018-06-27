@@ -1,6 +1,7 @@
 .break{
   border: 1px solid #e3e3e3;
-  height: 1px;
+  width: 950px;
+  margin: 50px auto 0px;
 }
 .footer{
   width: 100%;

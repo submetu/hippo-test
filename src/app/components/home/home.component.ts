@@ -8,17 +8,17 @@ import {SearchService} from '../../services/search.service';
 })
 export class HomeComponent implements OnInit {
   public afterSearch = false;
-  public searchResults;
+  public venues= [];
+  public maxVenues = 10;
   constructor(private searchService:SearchService) { }
 
   ngOnInit() {
     this.searchService.isSearched().subscribe( isSearched =>{
       this.afterSearch = isSearched;
     });
-    this.searchService.getSearchResults().subscribe( searchResults =>{
-      this.searchResults = searchResults;
-      console.log(this.searchResults)
-    })
+    this.searchService.getSearchResults().subscribe( (searchResults:Array<Object>) =>{
+      this.venues = searchResults.splice(0, this.maxVenues);
+    });
     
   }
   

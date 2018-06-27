@@ -18,8 +18,10 @@
   margin-top: -100px;
   position:relative;
 }
-.search-form-small{
-  left: 10%;
+.search-form-small form{
+  left: 160px;
+  position: relative;
+  display: inline-block;
 }
 .submit-container{
   width: 77px;
