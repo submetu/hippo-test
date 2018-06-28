@@ -1,27 +1,16 @@
 # Hippo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.7.
+Assignment for Hippo - Frontend Developer
+
+- The website is responsive
+- Due to some major issues in the Foursquare API, details such as stats are not available. Also, only a single photo and tip is received from the API which is why you will see one tip and one photo on the venue page
+- The maximum search results are limited to 4 in this app. You can change this in the `foursquare.service.ts` file. This was done because of the limited number of requests that the Foursquare API allows. 
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server
 
-## Code scaffolding
+## Browser issues
+Gotham Font in  Internet explorer is not supported as I was provided with .otf fonts and .otf fonts are not supported in Internet Explorer.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Internet explorer < 11 and browsers such as Opera mini do not support CSS grids. Therefore, the layout will not be pleasent.
