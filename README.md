@@ -8,7 +8,10 @@ Assignment for Hippo - Frontend Developer
 
 ## Development server
 
-Run `ng serve` for a dev server
+Clone the project
+Make sure that your port `4200` is available
+Run `npm install` in the root directory of the project
+Run `npm start` for a dev server
 
 ## Browser issues
 Gotham Font in  Internet explorer is not supported as I was provided with .otf fonts and .otf fonts are not supported in Internet Explorer.
