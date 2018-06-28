@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tips',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tips.component.css']
 })
 export class TipsComponent implements OnInit {
-
+  @Input() tips;
   constructor() { }
 
   ngOnInit() {

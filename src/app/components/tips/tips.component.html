@@ -1,3 +1,23 @@
-<p>
-  tips works!
-</p>
+<div class="tips-container">
+    <div class="tips-header">Tips</div>
+    <div class="tips-items">
+      <ul>
+        <li class="tips-item text" *ngFor="let tip of tips">
+          <div class="tips-item-container">
+           <img [src]="tip.user.photo.prefix + '40x40' + tip.user.photo.suffix" class="tips-item-image">
+           <div class="tips-item-data">
+             <div class="tips-item-data-user">
+               {{tip.user.firstName}} {{tip.user.lastName}}
+             </div>
+             <div class="tips-item-data-description">
+               {{tip.text}}
+             </div>
+           </div>
+          </div>
+        </li>
+        <li class="tips-item text">
+          <div class="all-tips">All Tips</div>
+        </li>
+      </ul>
+    </div>
+  </div>

@@ -12,6 +12,7 @@ import {FoursquareService} from '../../services/foursquare.service'
 export class VenuePageComponent implements OnInit {
 
   public venue;
+  public tips;
   public venueBackground:string = '';
 
   constructor(private route: ActivatedRoute, private fourSquareService: FoursquareService) { 
@@ -19,6 +20,7 @@ export class VenuePageComponent implements OnInit {
       let venueId = params['id']; 
       this.fourSquareService.getVenue(venueId).subscribe( resp =>{
         this.venue = resp['response'].venue || {};
+        this.tips = this.venue.tips.groups[0].items;
         this.venueBackground = `${this.venue.bestPhoto.prefix}1280x600${this.venue.bestPhoto.suffix}`;
       })
    });

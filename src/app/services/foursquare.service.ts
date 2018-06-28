@@ -5,8 +5,8 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class FoursquareService {
 
-  private client_id = "VYI2L0XWR4AKKQIJZP4NMBCNL2DUN4LGSDMG5IATMWHR4PYQ";
-  private client_secret = "S323TOHXEWUVPWOMHQ05S0SNDI4X05XVLH02THXMFJJK3IN2";
+  private client_id = "4LNFQKCKRPVZQOKWSK2ONFCDIY2DVRMEZGMPZCVPMRWBLLJQ";
+  private client_secret = "UCGOEGEN51LET4ZWK24W1OIOC13HWXDHQZLYDFRZE4WBXZVT";
   private now = new Date();
   //get version date in YYYMMDD format for foursquare API ( requried )
   private versionDate = String(this.now.getFullYear())  + String( ((this.now.getMonth() + 1).toString().length === 1 )? ("0"+(this.now.getMonth() + 1)) :  (this.now.getMonth() + 1) ) + String(this.now.getDate());

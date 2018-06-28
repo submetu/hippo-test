@@ -1,22 +1,27 @@
-.venue-container{
+.venue-container {
   /* background: url(/assets/background.jpg); */
   width: 100%;
   height: 600px;
   background-size: 100% 100% !important;
-  display:flex;
+  display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
-.king-heading{
+
+.king-heading {
   font-size: 64px;
   width: 100%;
   text-align: left;
-    padding-left: 150px;
-    position: relative;
-    bottom: 80px;
-
+  padding-left: 150px;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  bottom: 80px;
+  font-weight: 500;
 }
-.rating{
+
+.rating {
   background: url(/assets/rectangle-5.svg) no-repeat;
   width: 80px;
   height: 120px;
@@ -24,16 +29,18 @@
   position: relative;
   bottom: 75px;
 }
+
 img.coffee-logo {
-  position:  relative;
+  position: relative;
   right: 140px;
   bottom: 115px;
 }
+
 .venue-deatail-container {
   width: 100%;
   height: 115px;
   bottom: 70px;
-  position:  relative;
+  position: relative;
   opacity: 0.8;
   background-image: linear-gradient(95deg, #1e0db4, #e34747);
   text-indent: 140px;
@@ -42,65 +49,79 @@ img.coffee-logo {
 
 span.bar {
   width: 60px;
-  opacity: 0.43;
-  position:  relative;
-  display:  inline-block;
+  position: relative;
+  display: inline-block;
   border: 1px solid black;
-  bottom:  3px;
+  bottom: 3px;
   left: 5px;
 }
+
 span.bar:before {
   content: "";
-  position:  absolute;
+  position: absolute;
   width: 30px;
-  border:  1px solid #c3bfff;
+  border: 1px solid #c3bfff;
   bottom: -1px;
   left: -1px;
 }
 
-.rating-container{
+.rating-container {
   float: right;
   position: relative;
   top: -98px;
   right: 20%;
 }
+
 .rating-container .text.mini {
   position: absolute;
   top: -4px;
   right: 29px;
   font-size: 18px;
 }
+
 .stats-container {
-  display:  flex;
+  display: flex;
 }
 
 .cafe-score {
   margin-left: -120px;
 }
-.venue-deatail-container > * {
+
+.venue-deatail-container>* {
   margin-bottom: 6px;
 }
-.venue-body-container{
-  margin:  0 auto;
-  width: 950px;
-  display:  grid;
+
+.venue-body-container {
+  margin: 0 auto;
+  max-width: 950px;
+  display: grid;
   grid-template-columns: 2fr 1fr;
   margin-top: 30px;
 }
-.venue-tips-container{
+
+.venue-tips-container {
   width: 290px;
-  height: 600px;
+  max-height: 600px;
   object-fit: contain;
   background-color: #ffffff;
   box-shadow: 0 0 34px 0 rgba(115, 95, 255, 0.32);
+  position: relative;
+  bottom: 80px;
 }
-.venue-photos-container > ul{
-  display:flex;
+
+.venue-photos-container>ul {
+  display: flex;
   flex-wrap: wrap;
 }
-.venue-photo-item{
+
+.venue-photo-item {
   width: 290px;
   height: 290px;
   margin: 0px 10px 10px;
   background-color: rgba(18, 25, 95, 0.5);
+}
+
+.venue-photo-item>img {
+  width: 100%;
+  height: 100%;
 }

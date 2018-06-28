@@ -25,23 +25,20 @@
     </div>
     <div class="rating-container">
       <div class="rating"></div>
-      <span class="text mini">{{venue.rating}}</span>
+      <span class="text mini">{{(String(venue.rating).indexOf('.') === -1) ? venue.rating + '.0' : venue.rating}}</span>
     </div>
   </div>
 </div>
 <div class="venue-body-container">
   <div class="venue-photos-container">
     <ul>
-      <li class="venue-photo-item">
-        <img src="">
+      <li *ngFor="let photo of venue?.photos.groups[0].items" class="venue-photo-item">
+        <img [src]="photo.prefix + '290x290' + photo.suffix">
       </li>
-      <li class="venue-photo-item">
-        <img src="">
-      </li>
-      <li class="venue-photo-item">
-        <img src="">
-      </li>
+     
     </ul>
   </div>
-  <div class="venue-tips-container"></div>
+  <div class="venue-tips-container">
+    <app-tips [tips]="tips" ></app-tips>
+  </div>
 </div>

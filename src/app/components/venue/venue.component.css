@@ -10,20 +10,27 @@
   display: flex;
   align-items: flex-end;
   padding-left: 20px;
+  cursor:pointer;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.venue:hover {
+  box-shadow: 0 0 34px 0 rgba(255, 95, 95, 0.32)
 }
 
 .cafe-count-container{
   display: flex;
   justify-content: space-between;
+  margin-top: 10px;
 }
 
 .cafe-name {
   font-size: 25px;
   position: relative;
   text-align: left;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   overflow: hidden;
   width: 90%;
+  padding-bottom: 10px;
 }
 
 .cafe-name:after {
@@ -32,7 +39,7 @@
   content: '';
   position: absolute;
   left: 0;
-  bottom: -10px;
+  bottom: 0;
 }
 .cafe-score{
   position: relative;
@@ -51,11 +58,11 @@
   position: relative;
   top: 20px;
   font-size: 15px;
+  font-weight: 400;
 
 }
 span.bar {
   width: 60px;
-  opacity: 0.43;
   position:  relative;
   display:  inline-block;
   border: 1px solid black;
