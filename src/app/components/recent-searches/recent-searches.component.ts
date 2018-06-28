@@ -35,11 +35,7 @@ export class RecentSearchesComponent implements OnInit {
     });
   }
   searchVenues(e){
-    console.log('clicked')
-    this.fourSquareService.getVenues(e.searchFor, e.searchIn).subscribe(resp => {
-      this.searchService.onSearched(e);
-      this.searchService.onSearchResults(resp['response'].groups[0].items);
-    });
+    this.searchService.initSearch(e); 
   }
 
 }

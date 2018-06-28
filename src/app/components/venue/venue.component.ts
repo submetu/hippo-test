@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router'; 
+
 
 @Component({
   selector: 'app-venue',
@@ -7,9 +9,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class VenueComponent implements OnInit {
   @Input() venue;
-  constructor() { }
+  @Input() venuePhoto;
+  constructor(private router:Router) { }
 
   ngOnInit() {
+  }
+  openVenue(venueId){
+    this.router.navigate(['/venue', venueId]);
   }
 
 }

@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../../services/search.service';
 import { FoursquareService } from '../../services/foursquare.service';
 
-
-
 @Component({
   selector: 'app-search-form',
   templateUrl: './search-form.component.html',
@@ -27,10 +25,9 @@ export class SearchFormComponent implements OnInit {
     });
   }
   searchSubmit(e) {
-    this.fourSquareService.getVenues(e.searchFor, e.searchIn).subscribe(resp => {
-      this.searchService.onSearched(e);
-      this.searchService.onSearchResults(resp['response'].groups[0].items);
-    });
+    this.searchService.initSearch(e);
   }
+
+  
 
 }

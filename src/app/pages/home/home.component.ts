@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SearchService} from '../../services/search.service';
+import { FoursquareService } from '../../services/foursquare.service';
 
 @Component({
   selector: 'app-home',
@@ -8,18 +9,18 @@ import {SearchService} from '../../services/search.service';
 })
 export class HomeComponent implements OnInit {
   public afterSearch = false;
-  public venues= [];
-  public maxVenues = 10;
-  constructor(private searchService:SearchService) { }
+  public venues;
+  public venuePhotos;
+  public maxVenues;
+  constructor(private searchService:SearchService,private fourSquareService:FoursquareService) { }
 
   ngOnInit() {
+    this.maxVenues = this.fourSquareService.maxResults;
     this.searchService.isSearched().subscribe( isSearched =>{
       this.afterSearch = isSearched;
     });
-    this.searchService.getSearchResults().subscribe( (searchResults:Array<Object>) =>{
-      this.venues = searchResults.splice(0, this.maxVenues);
-    });
-    
+    this.venues = this.searchService.getSearchResults();
+    this.venuePhotos = this.searchService.getSearchResultPhotos();
   }
   
 

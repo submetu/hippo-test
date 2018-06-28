@@ -1,0 +1,47 @@
+<div *ngIf="venue" class="venue-container header" [ngStyle]="{background: 'linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('+venueBackground+')'}">
+  <app-logo style="width: 100%;" size="large"></app-logo>
+  <img src="/assets/category.svg" class="coffee-logo">
+  <div class="king-heading text">
+    {{venue.name}}
+  </div>
+  <div class="venue-deatail-container">
+    <div class="address">
+      <img class="address-logo" src="/assets/combined-shape.svg">
+      <span class="text mini">{{venue.location.address}}</span>
+    </div>
+    <div class="phone">
+      <img class="phone-logo" src="/assets/shape.svg">
+      <span class="text mini">{{venue.contact.formattedPhone}}</span>
+    </div>
+    <div class="stats-container">
+      <div class="stats">
+        <img src="/assets/ic-01.svg">
+        <span class="text mini">{{venue.tips.count}}</span>
+      </div>
+      <div class="cafe-score">
+        <img src="/assets/ic-02.svg">
+        <span class="bar"></span>
+      </div>
+    </div>
+    <div class="rating-container">
+      <div class="rating"></div>
+      <span class="text mini">{{venue.rating}}</span>
+    </div>
+  </div>
+</div>
+<div class="venue-body-container">
+  <div class="venue-photos-container">
+    <ul>
+      <li class="venue-photo-item">
+        <img src="">
+      </li>
+      <li class="venue-photo-item">
+        <img src="">
+      </li>
+      <li class="venue-photo-item">
+        <img src="">
+      </li>
+    </ul>
+  </div>
+  <div class="venue-tips-container"></div>
+</div>

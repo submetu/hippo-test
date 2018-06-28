@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { VenueComponent } from './components/venue/venue.component';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { RecentSearchesComponent } from './components/recent-searches/recent-searches.component';
@@ -15,6 +15,8 @@ import { RecentSearchesComponent } from './components/recent-searches/recent-sea
 import {SearchService} from './services/search.service';
 import {FoursquareService} from './services/foursquare.service';
 import {StorageService} from './services/storage.service';
+import { VenuePageComponent } from './pages/venue-page/venue-page.component';
+import { TipsComponent } from './components/tips/tips.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import {StorageService} from './services/storage.service';
     HomeComponent,
     SearchFormComponent,
     LogoComponent,
-    RecentSearchesComponent
+    RecentSearchesComponent,
+    VenuePageComponent,
+    TipsComponent
   ],
   imports: [
     BrowserModule,

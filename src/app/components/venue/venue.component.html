@@ -1,7 +1,7 @@
-<div class="venue">
+<div *ngIf="venuePhoto" class="venue" (click)="openVenue(venue.venue.id)" [ngStyle]="{background: 'linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('+venuePhoto+')'}">
   <div class="bottom-container">
     <div class="cafe-name text">
-      {{venue.venue.name}}
+        {{venue.venue.name}} 
     </div>
     <div class="cafe-count-container">
       <div class="cafe-users">
