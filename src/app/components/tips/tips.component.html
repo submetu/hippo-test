@@ -4,7 +4,7 @@
       <ul>
         <li class="tips-item text" *ngFor="let tip of tips">
           <div class="tips-item-container">
-           <img [src]="tip.user.photo.prefix + '40x40' + tip.user.photo.suffix" class="tips-item-image">
+           <img [src]="tip?.user?.photo?.prefix + '40x40' + tip?.user?.photo?.suffix" class="tips-item-image">
            <div class="tips-item-data">
              <div class="tips-item-data-user">
                {{tip.user.firstName}} {{tip.user.lastName}}

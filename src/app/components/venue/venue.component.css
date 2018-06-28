@@ -4,8 +4,6 @@
 .venue {
   width: 290px;
   height: 290px;
-  /* background-color: #92335b; */
-  /* opacity: .3; */
   margin: 0px 10px 10px;
   display: flex;
   align-items: flex-end;

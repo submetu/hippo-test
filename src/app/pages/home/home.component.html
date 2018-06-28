@@ -18,7 +18,7 @@
   </div>
   <div class="after-search-container">
     <div class="search-grid">
-      <app-venue *ngFor="let venue of venues|async|slice:0:maxVenues;let i = index" [venue]="venue" [venuePhoto]="(venuePhotos|async)[i]"></app-venue>
+      <app-venue *ngFor="let venue of venues|async;let i = index" [venue]="venue" [venuePhoto]="(venuePhotos|async)[i]"></app-venue>
     </div>
     <div class="recent-searches">
       <app-recent-searches></app-recent-searches>

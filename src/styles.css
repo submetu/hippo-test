@@ -224,4 +224,7 @@ input:-moz-placeholder {
   app-venue-page .venue-container{
     height: 450px !important;
   }
+  app-venue-page .venue-photos-container ul{
+    justify-content: center;
+  }
 }

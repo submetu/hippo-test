@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { forkJoin } from "rxjs/observable/forkJoin";
 
-import {StorageService} from './storage.service';
-import {FoursquareService} from './foursquare.service';
+import { StorageService } from './storage.service';
+import { FoursquareService } from './foursquare.service';
 
 
 @Injectable()
@@ -13,14 +13,14 @@ export class SearchService {
   public searchResults = new BehaviorSubject<Array<Object>>([]);
   public searchResultsPhotos = new BehaviorSubject<Array<Object>>([]);
 
-  constructor(private storageService: StorageService,private fourSquareService:FoursquareService) { }
+  constructor(private storageService: StorageService, private fourSquareService: FoursquareService) { }
 
   isSearched(): Observable<boolean> {
     return this.afterSearch.asObservable();
   }
 
   onSearched({ searchFor, searchIn }): void {
-    this.storageService.saveItem('recent-searched',{ searchFor, searchIn }, true);
+    this.storageService.saveItem('recent-searched', { searchFor, searchIn }, true);
     this.searchTerms.next({ searchFor, searchIn });
     this.afterSearch.next(true);
   }
@@ -29,32 +29,33 @@ export class SearchService {
     return this.searchTerms.asObservable();
   }
 
-  onSearchResults(results:Array<Object>): void {
+  onSearchResults(results: Array<Object>): void {
     this.searchResults.next(results);
   }
 
   getSearchResults(): Observable<Array<Object>> {
     return this.searchResults.asObservable();
   }
-  
-  onSearchResultsPhotos(photos): void{
+
+  onSearchResultsPhotos(photos): void {
     this.searchResultsPhotos.next(photos);
   }
 
-  getSearchResultPhotos(): Observable<Array<Object>>{
+  getSearchResultPhotos(): Observable<Array<Object>> {
     return this.searchResultsPhotos.asObservable();
   }
 
-  initSearch(e){
-    this.fourSquareService.getVenues(e.searchFor, e.searchIn).subscribe(resp => {
+  initSearch(searchTerms) {
+    this.fourSquareService.getVenues(searchTerms.searchFor, searchTerms.searchIn).subscribe(resp => {
       let searchResults = resp['response'] && resp['response'].groups && resp['response'].groups[0] && resp['response'].groups[0].items;
       if (!searchResults) {
         throw new Error("Please revise Foursquare API");
       }
-
-      this.onSearched(e);
-      this.onSearchResults(searchResults);
-      this.getPhotos(searchResults, this.fourSquareService.maxResults).then(photos =>{
+      let splicedSearchResults =searchResults.splice(0,this.fourSquareService.maxResults);
+      this.onSearched(searchTerms);
+      
+      this.onSearchResults(splicedSearchResults);
+      this.getPhotos(splicedSearchResults, this.fourSquareService.maxResults).then(photos => {
         this.onSearchResultsPhotos(photos);
       });
     });
@@ -63,21 +64,21 @@ export class SearchService {
     return new Promise((resolve, reject) => {
       let subscriptionsArr = [];
       let photoURLArr = [];
-      searchResults = searchResults.splice(0, maxPhotosCount)
-      let idArr = searchResults.map(result => {
-        let id = result.venue.id
+      
+      searchResults.map(result => {
+        let id = result.venue.id;
         subscriptionsArr.push(this.fourSquareService.getPhotos(id));
       });
 
       forkJoin(subscriptionsArr).subscribe(results => {
         photoURLArr = results.map(result => {
           let photo = result['response'].photos.items[0];
-          let photoURL = `${photo.prefix}290x290${photo.suffix}`;
+          let photoURL = photo && `${photo.prefix}290x290${photo.suffix}`;
           return photoURL;
         });
-        if(photoURLArr.length === maxPhotosCount){
+        if (photoURLArr.length === maxPhotosCount) {
           resolve(photoURLArr);
-        }else{
+        } else {
           reject(new Error("Couldn't get photos"));
         }
       })

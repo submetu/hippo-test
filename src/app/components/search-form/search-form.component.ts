@@ -24,8 +24,8 @@ export class SearchFormComponent implements OnInit {
       this.searchFor = searchTerms['searchFor'];
     });
   }
-  searchSubmit(e) {
-    this.searchService.initSearch(e);
+  searchSubmit(searchTerms) {
+    this.searchService.initSearch(searchTerms);
   }
 
   

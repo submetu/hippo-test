@@ -20,7 +20,7 @@ export class RecentSearchesComponent implements OnInit {
   public recentSearches = null;
 
   ngOnInit() {
-    this.searchService.getSearchTerms().subscribe(searchTerms => {
+    this.searchService.isSearched().subscribe( () => {
       let _recentSearches = this.storageService.getItem('recent-searched');
       try{
        _recentSearches =  JSON.parse(_recentSearches);
@@ -34,8 +34,8 @@ export class RecentSearchesComponent implements OnInit {
       }
     });
   }
-  searchVenues(e){
-    this.searchService.initSearch(e); 
+  searchVenues(searchTerms){
+    this.searchService.initSearch(searchTerms); 
   }
 
 }

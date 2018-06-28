@@ -45,12 +45,6 @@
 #search-submit:hover{
   transform: scale(1.05);
 }    
-@media screen and (max-width: 500px){
-  .home-container form > *{
-    display: block;
-    margin: 0 auto;
-    position: relative;
-    top: 20px;
-  }
-}
+
+
 

@@ -19,6 +19,7 @@ export class StorageService {
     }
     if(_item && _item.constructor === Array && append){
       _item.unshift(value);
+      //if _item array overflows, get rid of the last element
       if(_item.length > this.maxStorageLength){
        _item = _item.splice(0,this.maxStorageLength)
       }

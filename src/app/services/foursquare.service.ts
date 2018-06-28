@@ -5,8 +5,8 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class FoursquareService {
 
-  private client_id = "4LNFQKCKRPVZQOKWSK2ONFCDIY2DVRMEZGMPZCVPMRWBLLJQ";
-  private client_secret = "UCGOEGEN51LET4ZWK24W1OIOC13HWXDHQZLYDFRZE4WBXZVT";
+  private client_id = "MKBS5RJL1JOYKX35SGQSPMZ2EWAGZXVDIUBZCCODSI4KML0Z";
+  private client_secret = "5ANEUWLIDQJM54E4HGYJ2TCJGENOUR2OEXTJ2A00KXYBY0KA";
   private now = new Date();
   //get version date in YYYMMDD format for foursquare API ( requried )
   private versionDate = String(this.now.getFullYear())  + String( ((this.now.getMonth() + 1).toString().length === 1 )? ("0"+(this.now.getMonth() + 1)) :  (this.now.getMonth() + 1) ) + String(this.now.getDate());
@@ -14,7 +14,8 @@ export class FoursquareService {
   private exploreURL = `https://api.foursquare.com/v2/venues/explore?${this.configURL}`
   private venueURL = 'https://api.foursquare.com/v2/venues/';
 
-  public maxResults:number = 1;
+  //CHANGE THIS TO 10 FOR SEEING MORE RESULTS -- DONE FOR LIMITING API REQUESTS TO THE FOURSQUARE API
+  public maxResults:number = 4; 
 
   constructor(private http: HttpClient) { }
 

@@ -25,7 +25,7 @@
     </div>
     <div class="rating-container">
       <div class="rating"></div>
-      <span class="text mini">{{(String(venue.rating).indexOf('.') === -1) ? venue.rating + '.0' : venue.rating}}</span>
+      <span class="text mini">{{venue.rating.toFixed(1)}}</span>
     </div>
   </div>
 </div>
@@ -33,7 +33,7 @@
   <div class="venue-photos-container">
     <ul>
       <li *ngFor="let photo of venue?.photos.groups[0].items" class="venue-photo-item">
-        <img [src]="photo.prefix + '290x290' + photo.suffix">
+        <img [src]="photo?.prefix + '290x290' + photo?.suffix">
       </li>
      
     </ul>
