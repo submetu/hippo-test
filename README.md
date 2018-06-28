@@ -9,8 +9,11 @@ Assignment for Hippo - Frontend Developer
 ## Development server
 
 Clone the project
+
 Make sure that your port `4200` is available
+
 Run `npm install` in the root directory of the project
+
 Run `npm start` for a dev server
 
 ## Browser issues
